@@ -1,0 +1,35 @@
+{% extends template('page-layout-checkout', 'CheckoutPage') %}
+
+{% define data = {
+    stepNumder: 1,
+    backUrl: _view.previousStepUrl,
+    forms: {
+        orderName: _view.orderNameForm,
+    },
+
+    title: 'checkout.step.order-name.title' | trans,
+} %}
+
+{% block content %}
+    {% embed molecule('form') with {
+        modifiers: ['checkout-form'],
+        data: {
+            form: data.forms.orderName,
+            cart: data.forms.orderName.vars.data,
+            backUrl: data.backUrl,
+            submit: {
+                enable: true,
+                text: 'checkout.step.address.title' | trans,
+                class: 'form__action--expand-sm-md button button--big',
+            },
+            cancel: {
+                enable: true,
+                url: data.backUrl,
+                text: 'general.back.button' | trans,
+                icon: '',
+                class: 'form__action--expand-sm-md button button--big button--hollow-icon button--back',
+            },
+        },
+    } only %}
+    {% endembed %}
+{% endblock %}

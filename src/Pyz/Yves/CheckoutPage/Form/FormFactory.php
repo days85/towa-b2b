@@ -7,6 +7,7 @@
 
 namespace Pyz\Yves\CheckoutPage\Form;
 
+use Pyz\Yves\CheckoutPage\Form\Steps\OrderNameForm;
 use Pyz\Yves\CheckoutPage\Form\Steps\PaymentForm;
 use Spryker\Yves\StepEngine\Form\FormCollectionHandlerInterface;
 use SprykerShop\Yves\CheckoutPage\Form\FormFactory as SprykerFormFactory;
@@ -22,5 +23,23 @@ class FormFactory extends SprykerFormFactory
         $subFormDataProvider = $this->createSubFormDataProvider($createPaymentSubForms);
 
         return $this->createSubFormCollection(PaymentForm::class, $subFormDataProvider);
+    }
+
+    /**
+     * @return FormCollectionHandlerInterface
+     */
+    public function createOrderNameFormCollection(): FormCollectionHandlerInterface
+    {
+        return $this->createFormCollection($this->getOrderNameFormTypes());
+    }
+
+    /**
+     * @return string[]
+     */
+    protected function getOrderNameFormTypes(): array
+    {
+        return [
+            OrderNameForm::class,
+        ];
     }
 }

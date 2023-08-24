@@ -17,6 +17,14 @@ class OrderNameForm extends AbstractType
 
     protected const VALIDATION_MAX_LENGTH_MESSAGE = 'validation.max_length';
 
+    /**
+     * @return string
+     */
+    public function getBlockPrefix(): string
+    {
+        return 'orderNameForm';
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $this->addOrderNameField($builder);
@@ -25,7 +33,7 @@ class OrderNameForm extends AbstractType
     protected function addOrderNameField(FormBuilderInterface $builder): static
     {
         $builder->add(static::FIELD_ORDER_NAME, TextType::class, [
-            'label' => 'checkout.order_name',
+            'label' => 'checkout.order-name',
             'required' => true,
             'trim' => true,
             'sanitize_xss' => true,

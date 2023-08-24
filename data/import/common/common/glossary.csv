@@ -3831,3 +3831,7 @@ permission.name.SeeCompanyUsersPermissionPlugin,View company users,en_US
 permission.name.SeeCompanyUsersPermissionPlugin,Firmenbenutzer anzeigen,de_DE
 store_widget.switcher.store,Store:,en_US
 store_widget.switcher.store,Shop:,de_DE
+checkout.step.order-name.title,Order Name,en_US
+checkout.step.order-name.title,Order Name,de_DE
+checkout.order-name,Order Name,en_US
+checkout.order-name,Order Name,de_DE

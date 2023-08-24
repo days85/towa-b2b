@@ -39,6 +39,8 @@ use Symfony\Component\Form\FormInterface;
 
 class CheckoutPageDependencyProvider extends SprykerShopCheckoutPageDependencyProvider
 {
+    public const PLUGIN_ORDER_NAME_PAGE_WIDGETS = 'PLUGIN_ORDER_NAME_PAGE_WIDGETS';
+
     /**
      * @var string
      *
@@ -55,6 +57,7 @@ class CheckoutPageDependencyProvider extends SprykerShopCheckoutPageDependencyPr
     {
         $container = parent::provideDependencies($container);
         $container = $this->extendPyzPaymentMethodHandler($container);
+        $this->addOrderNamePageWidgetPlugins($container);
 
         return $container;
     }
@@ -211,5 +214,25 @@ class CheckoutPageDependencyProvider extends SprykerShopCheckoutPageDependencyPr
         return [
             new PaymentForeignPaymentCollectionExtenderPlugin(),
         ];
+    }
+
+    /**
+     * @param Container $container
+     * @return void
+     */
+    protected function addOrderNamePageWidgetPlugins(Container $container): void
+    {
+        $container->set(
+            static::PLUGIN_ORDER_NAME_PAGE_WIDGETS,
+            fn () => $this->getOrderNamePageWidgetPlugins()
+        );
+    }
+
+    /**
+     * @return array<string>
+     */
+    protected function getOrderNamePageWidgetPlugins(): array
+    {
+        return [];
     }
 }
