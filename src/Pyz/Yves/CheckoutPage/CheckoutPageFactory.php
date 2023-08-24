@@ -30,7 +30,7 @@ class CheckoutPageFactory extends SprykerCheckoutPageFactory
     }
 
     /**
-     * @return StepFactory
+     * @return \Pyz\Yves\CheckoutPage\Process\StepFactory
      */
     public function createStepFactory(): StepFactory
     {

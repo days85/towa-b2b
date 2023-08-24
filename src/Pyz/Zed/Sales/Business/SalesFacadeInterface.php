@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * This file is part of the Spryker Commerce OS.
+ * For full license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Pyz\Zed\Sales\Business;
 
 use Generated\Shared\Transfer\QuoteTransfer;
 use Generated\Shared\Transfer\SpySalesOrderEntityTransfer;
+use Spryker\Zed\Sales\Business\SalesFacadeInterface as SprykerSalesFacadeInterface;
 
-interface SalesFacadeInterface extends \Spryker\Zed\Sales\Business\SalesFacadeInterface
+interface SalesFacadeInterface extends SprykerSalesFacadeInterface
 {
     /**
      * Specification:
@@ -20,6 +26,6 @@ interface SalesFacadeInterface extends \Spryker\Zed\Sales\Business\SalesFacadeIn
      */
     public function expandSalesOrderEntityTransferWithOrderName(
         SpySalesOrderEntityTransfer $salesOrderEntityTransfer,
-        QuoteTransfer $quoteTransfer
+        QuoteTransfer $quoteTransfer,
     ): SpySalesOrderEntityTransfer;
 }

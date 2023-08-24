@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * This file is part of the Spryker Commerce OS.
+ * For full license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Pyz\Zed\Sales\Communication\Table;
 
 use Orm\Zed\Sales\Persistence\Map\SpySalesOrderTableMap;
@@ -59,6 +64,7 @@ class OrdersTable extends SprykerOrdersTable
 
     /**
      * @param array $queryResults
+     *
      * @return array
      */
     protected function formatQueryData(array $queryResults): array

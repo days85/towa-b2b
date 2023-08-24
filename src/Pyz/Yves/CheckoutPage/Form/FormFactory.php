@@ -26,7 +26,7 @@ class FormFactory extends SprykerFormFactory
     }
 
     /**
-     * @return FormCollectionHandlerInterface
+     * @return \Spryker\Yves\StepEngine\Form\FormCollectionHandlerInterface
      */
     public function createOrderNameFormCollection(): FormCollectionHandlerInterface
     {

@@ -39,6 +39,9 @@ use Symfony\Component\Form\FormInterface;
 
 class CheckoutPageDependencyProvider extends SprykerShopCheckoutPageDependencyProvider
 {
+    /**
+     * @var string
+     */
     public const PLUGIN_ORDER_NAME_PAGE_WIDGETS = 'PLUGIN_ORDER_NAME_PAGE_WIDGETS';
 
     /**
@@ -217,7 +220,8 @@ class CheckoutPageDependencyProvider extends SprykerShopCheckoutPageDependencyPr
     }
 
     /**
-     * @param Container $container
+     * @param \Spryker\Yves\Kernel\Container $container
+     *
      * @return void
      */
     protected function addOrderNamePageWidgetPlugins(Container $container): void

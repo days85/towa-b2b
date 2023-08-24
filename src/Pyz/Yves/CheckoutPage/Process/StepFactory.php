@@ -1,14 +1,18 @@
 <?php
 
+/**
+ * This file is part of the Spryker Commerce OS.
+ * For full license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Pyz\Yves\CheckoutPage\Process;
 
-use Pyz\Yves\CheckoutPage\CheckoutPageConfig;
 use Pyz\Yves\CheckoutPage\Plugin\Router\CheckoutPageRouteProviderPlugin;
 use Pyz\Yves\CheckoutPage\Process\Steps\OrderNameStep;
 use SprykerShop\Yves\CheckoutPage\Process\StepFactory as SprykerStepFactory;
 
 /**
- * @method CheckoutPageConfig getConfig()
+ * @method \Pyz\Yves\CheckoutPage\CheckoutPageConfig getConfig()
  */
 class StepFactory extends SprykerStepFactory
 {
@@ -29,7 +33,7 @@ class StepFactory extends SprykerStepFactory
     }
 
     /**
-     * @return OrderNameStep
+     * @return \Pyz\Yves\CheckoutPage\Process\Steps\OrderNameStep
      */
     public function createOrderNameStep(): OrderNameStep
     {

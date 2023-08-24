@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * This file is part of the Spryker Commerce OS.
+ * For full license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Pyz\Yves\CheckoutPage\Form\Steps;
 
 use Spryker\Yves\Kernel\Form\AbstractType;
@@ -9,12 +14,24 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 
+/**
+ * @method \Pyz\Yves\CheckoutPage\CheckoutPageConfig getConfig()
+ */
 class OrderNameForm extends AbstractType
 {
+    /**
+     * @var string
+     */
     protected const FIELD_ORDER_NAME = 'order_name';
 
+    /**
+     * @var string
+     */
     protected const VALIDATION_NOT_BLANK_MESSAGE = 'validation.not_blank';
 
+    /**
+     * @var string
+     */
     protected const VALIDATION_MAX_LENGTH_MESSAGE = 'validation.max_length';
 
     /**
@@ -25,6 +42,9 @@ class OrderNameForm extends AbstractType
         return 'orderNameForm';
     }
 
+    /**
+     * @return void
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $this->addOrderNameField($builder);

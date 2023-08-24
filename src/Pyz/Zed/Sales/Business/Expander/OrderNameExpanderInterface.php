@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * This file is part of the Spryker Commerce OS.
+ * For full license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Pyz\Zed\Sales\Business\Expander;
 
 use Generated\Shared\Transfer\QuoteTransfer;
@@ -8,12 +13,13 @@ use Generated\Shared\Transfer\SpySalesOrderEntityTransfer;
 interface OrderNameExpanderInterface
 {
     /**
-     * @param SpySalesOrderEntityTransfer $salesOrderEntityTransfer
-     * @param QuoteTransfer $quoteTransfer
-     * @return SpySalesOrderEntityTransfer
+     * @param \Generated\Shared\Transfer\SpySalesOrderEntityTransfer $salesOrderEntityTransfer
+     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
+     *
+     * @return \Generated\Shared\Transfer\SpySalesOrderEntityTransfer
      */
     public function expandSalesOrderEntityTransferWithOrderName(
         SpySalesOrderEntityTransfer $salesOrderEntityTransfer,
-        QuoteTransfer $quoteTransfer
+        QuoteTransfer $quoteTransfer,
     ): SpySalesOrderEntityTransfer;
 }
