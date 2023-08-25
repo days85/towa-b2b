@@ -13,4 +13,6 @@ class OrderListPage
      * @var string
      */
     public const ORDER_LIST_URL = '/sales';
+
+    public const ORDER_LIST_TABLE_ORDER_NAME_COLUMN_XPATH = '//th[@id="spy_sales_order.order_name"]';
 }
